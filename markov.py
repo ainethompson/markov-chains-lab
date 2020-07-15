@@ -57,7 +57,7 @@ def make_chains(text_string):
     #     print (words[index], words[index +1])
 
     for idx in range(len(words) -2):
-        key = (words[idx], words[idx+ 1])
+        key = (words[idx], words[idx + 1])
         value = words[idx +2]
 
         if key not in chains:
@@ -90,7 +90,7 @@ def make_text(chains):
 
     #print(new_key)
 
-    while words is not None:
+    while word is not None:
         key = (key[1], word)
         words.append(word)
         word = choice(chains[key])
@@ -99,7 +99,7 @@ def make_text(chains):
 
 #make_text('chains')
 
-input_path = 'green-eggs.txt'
+input_path = sys.argv[1]
 
 # Open the file and turn it into one long string
 input_text = open_and_read_file(input_path)
